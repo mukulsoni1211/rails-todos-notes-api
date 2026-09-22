@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
 	skip_before_action :verify_authenticity_token
 
 	def authentication!
-		token = request.header["Token"]
+		token = request.headers["Token"]
 		render json: {error: "Token not present"} and return if token.nil?
 
 		data = Jwt.decode(token)
