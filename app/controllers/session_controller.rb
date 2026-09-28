@@ -9,6 +9,6 @@ class SessionController < ApplicationController
 
 		token = Jwt.encode({email: user.email})
 
-		render json: {token: token}
+		render json: {token: token, name: user.name, email: user.email}
 	end
 end
