@@ -8,6 +8,7 @@ class TodosController < ApplicationController
   end
 
   def create
+  	debugger
     todo = current_user.todos.create!(todo_params)
 
     render json: todo, status: :created
