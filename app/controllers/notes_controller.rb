@@ -1,5 +1,5 @@
 class NotesController < ApplicationController
-  before_action :set_note, only: [:update, :destroy]
+  before_action :set_note, only: [:show, :update, :destroy]
 
   def index
     notes = current_user.notes.order(updated_at: :desc)
@@ -11,6 +11,10 @@ class NotesController < ApplicationController
     note = current_user.notes.create!(note_params)
 
     render json: note, status: :created
+  end
+
+  def show
+  	render json: @note
   end
 
   def update

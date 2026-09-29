@@ -4,5 +4,5 @@ Rails.application.routes.draw do
   post :login, to: "session#login"
   post :signup, to: "registration#signup"
   resources :todos, only: [:index, :create, :update, :destroy]
-  resources :notes, only: [:index, :create, :update, :destroy]
+  resources :notes, only: [:index, :show, :create, :update, :destroy]
 end
