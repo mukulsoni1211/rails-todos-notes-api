@@ -275,6 +275,7 @@ DEPENDENCIES
   jbuilder (~> 2.7)
   jwt
   listen (~> 3.3)
+  logger
   pg
   puma (~> 5.0)
   rack-cors
